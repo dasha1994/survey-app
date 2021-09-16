@@ -1,0 +1,19 @@
+on:
+  push:
+    paths:
+      - 'survey_app_aws_stack.yml'
+
+jobs:
+  update_stack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Update AWS CloudFormation Stack
+        run: |
+          aws cloudformation update-stack --stack-name survey-app-stack --template-body file://survey_app_aws_stack.yml
