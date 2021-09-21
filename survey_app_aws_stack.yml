@@ -6,7 +6,7 @@ Parameters:
     Default: "survey-app-bucket-name"
 
 Resources:
-  # Create the bucket to contain the website HTML
+  # Create the bucket to contain the website HTMLs
   S3Bucket:
     Type: "AWS::S3::Bucket"
     Properties:
