@@ -16,4 +16,4 @@ jobs:
           aws-region: us-west-2
       - name: Update AWS CloudFormation Stack
         run: |
-          aws cloudformation update-stack --stack-name survey-app-stack --template-body file://survey_app_aws_stack.yml
+          aws cloudformation update-stack --stack-name survey-app-stack --template-body file://survey_app_aws_stack.yml --capabilities CAPABILITY_NAMED_IAM
