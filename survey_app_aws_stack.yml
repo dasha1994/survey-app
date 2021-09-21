@@ -3,7 +3,7 @@ Description: "Survey app hosting with S3 and CloudFront"
 Parameters:
   BucketName:
     Type: String
-    Default: "survey233-app-bucket-name"
+    Default: "survey-app-bucket-name"
 
 Resources:
   # Create the bucket to contain the website HTML
